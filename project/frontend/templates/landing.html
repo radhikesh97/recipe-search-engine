@@ -1,0 +1,38 @@
+<!-- templates/home.html -->
+
+
+<p style="text-align:center; color:blue; font-size:36px; font-family:'Courier New'">Recipe Search Backend</h1>
+
+<p style="font-size:20px; font-family:'Courier New'">Search API Interface</p>
+<form action="{% url 'search_result' %}" method="get">
+  <input style="text-align:center" name="query" type="text" placeholder="Search...">
+  <select style="text-align:center" name="search_type" id="search" default="tfidf">
+    <option value="tfidf">TFIDF</option>
+    <option value="bm25">BM25</option>
+    <option value="other">Other</option>
+  </select>
+  <input style="text-align:center" type="submit" value="Find!">
+</form>
+
+<p></p>
+<p></p>
+<p style="font-size:20px; font-family:'Courier New'">Recommendation API Interface </p>
+<form action="{% url 'recommendation_results' %}" method="get">
+  <input name="recipe_id" type="text" placeholder ="Enter Recipe Number">
+  <input type="submit" value="Recommend!">
+</form>
+
+<p></p>
+<p></p>
+<p style="font-size:20px; font-family:'Courier New'">Nutrition Calculator API Interface</p>
+<form action="{% url 'nutrition_results' %}" method="get">
+  <input name="ingredient" type="text" placeholder ="Enter Ingredient">
+  <input type="submit" value="Calculate Nutrition Value!">
+</form>
+
+<p></p>
+<p></p>
+<p style="font-size:20px; font-family:'Courier New'">Live Indexing/Scraping API Interface</p>
+<form action="{% url 'scrape_land' %}" method="get">
+  <input type="submit" value="Scrape Recipes!">
+</form>
